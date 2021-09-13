@@ -44,3 +44,6 @@ C:\Users\aris\source\repos\EmployeesManager\EmployeesManager\obj\Debug\netcoreap
 C:\Users\aris\source\repos\EmployeesManager\EmployeesManager\obj\Debug\netcoreapp3.1\EmployeesManager.dll
 C:\Users\aris\source\repos\EmployeesManager\EmployeesManager\obj\Debug\netcoreapp3.1\EmployeesManager.pdb
 C:\Users\aris\source\repos\EmployeesManager\EmployeesManager\obj\Debug\netcoreapp3.1\EmployeesManager.genruntimeconfig.cache
+C:\Users\aris\source\repos\EmployeesManager\EmployeesManager\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\aris\source\repos\EmployeesManager\EmployeesManager\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\aris\source\repos\EmployeesManager\EmployeesManager\obj\Debug\netcoreapp3.1\EmployeesManager.MvcApplicationPartsAssemblyInfo.cs
