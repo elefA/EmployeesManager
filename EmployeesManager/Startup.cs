@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.OpenApi.Models;
+using EmployeesManager.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeesManager
 {
@@ -26,22 +28,32 @@ namespace EmployeesManager
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddDbContext<DatabaseContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("sqlConnection"))
+            ); 
+            services.AddCors(o =>
+            {
+                o.AddPolicy("AllowAll", builder =>
+                 builder.AllowAnyOrigin()
+                 .AllowAnyMethod()
+                 .AllowAnyHeader());
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Zomato API",
+                    Title = "EmployeesManager API",
                     Version = "v1",
-                    Description = "Description for the API goes here.",
+                    Description = ".",
                     Contact = new OpenApiContact
                     {
-                        Name = "Ankush Jain",
+                        Name = "Aris Eleftheriadis",
                         Email = string.Empty,
-                        Url = new Uri("https://coderjony.com/"),
+                        Url = new Uri("https://github.com/elefA")
                     },
                 });
             });
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +79,7 @@ namespace EmployeesManager
 
             app.UseHttpsRedirection();
 
+            app.UseCors("AllowAll");
             app.UseRouting();
 
             app.UseAuthorization();
